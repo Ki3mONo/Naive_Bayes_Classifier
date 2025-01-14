@@ -13,7 +13,7 @@ class MultinomialNaiveBayesClassifier(NaiveBayesClassifier):
     """
     def __init__(self, classes, features):
         """
-        Inicjalizuje klasę MultinomialNaiveBayesClassifier dziedziczącą po 
+        Inicjalizuje klasę MultinomialNaiveBayesClassifier dziedziczącą po NaiveBayesClassifier
         
         Args:
             classes (list): Lista nazw klas

@@ -13,7 +13,7 @@ class GaussianNaiveBayesClassifier(NaiveBayesClassifier):
     """
     def __init__(self, classes, features):
         """
-        Inicjalizuje klasę GaussianNaiveBayesClassifier dziedziczącą po 
+        Inicjalizuje klasę GaussianNaiveBayesClassifier dziedziczącą po NaiveBayesClassifier
         
         Args:
             classes (list): Lista nazw klas (np. ['setosa', 'versicolor', 'virginica']).
