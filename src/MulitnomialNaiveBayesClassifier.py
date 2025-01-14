@@ -1,4 +1,5 @@
-class MultinomialNaiveBayesClassifier:
+from .NaiveBayesClassifier import *
+class MultinomialNaiveBayesClassifier(NaiveBayesClassifier):
     """
     Klasyfikator Naiwnego Bayesa dla danych kategorycznych (Multinomial).
     
@@ -11,12 +12,17 @@ class MultinomialNaiveBayesClassifier:
         fitted (bool): Flaga wskazująca, czy model został wytrenowany.
     """
     def __init__(self, classes, features):
-        self.classes = classes
+        """
+        Inicjalizuje klasę MultinomialNaiveBayesClassifier dziedziczącą po 
+        
+        Args:
+            classes (list): Lista nazw klas
+            features (list): Lista cech
+        """
+        super().__init__(classes, features)
         self.class_counter = {c: 0 for c in classes}
-        self.features = features
         self.feature_values = {f: set() for f in features}
         self.class_feature_value_counts = {c: {f: {} for f in features} for c in classes}
-        self.fitted = False
 
     def fit(self, data):
         """
@@ -66,51 +72,3 @@ class MultinomialNaiveBayesClassifier:
                     else:
                         probs[c] = 0
         return probs
-
-    def predict(self, record):
-        """
-        Przewiduje klasę dla podanego rekordu.
-        
-        Args:
-            record (dict): Słownik reprezentujący pojedynczy rekord (nazwa cechy -> wartość cechy).
-        
-        Returns:
-            pred_class (str): Przewidywana klasa dla rekordu.
-        
-        Raises:
-            Exception: Jeśli model nie został wytrenowany.
-        """
-        if not self.fitted:
-            raise Exception('Multinomial Naive Bayes Classifier not fitted')
-        probs = self.predict_proba(record)
-        pred_class = max(probs, key=probs.get)
-        return pred_class
-
-    def predict_dataframe_with_accuracy(self, data):
-        """
-        Oblicza predykcje dla zbioru danych oraz dokładność modelu.
-        
-        Args:
-            data (pandas.DataFrame): Dane testowe zawierające kolumnę 'class' i kolumny cech.
-        
-        Returns:
-            tuple: 
-                - predictions (list): Lista przewidywanych klas dla każdego rekordu.
-                - accuracy (float): Dokładność modelu (proporcja poprawnych predykcji).
-        
-        Raises:
-            Exception: Jeśli model nie został wytrenowany.
-        """
-        if not self.fitted:
-            raise Exception('Multinomial Naive Bayes Classifier not fitted')
-        predictions = []
-        correct = 0
-        for _, row in data.iterrows():
-            actual_class = row['class']
-            record = row.to_dict()
-            pred_class = self.predict(record)
-            predictions.append(pred_class)
-            if pred_class == actual_class:
-                correct += 1
-        accuracy = correct / len(data)
-        return predictions, accuracy
