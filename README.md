@@ -5,7 +5,7 @@ Projekt implementuje Naiwne Klasyfikatory Bayesowskie dla dwóch typów danych:
 1. **Dane kategoryczne** – implementacja klasyfikatora **Multinomial Naive Bayes Classifier**.
 2. **Dane ilościowe** – implementacja klasyfikatora **Gaussian Naive Bayes Classifier**.
 
-Projekt testowano na rzeczywistych zbiorach danych, takich jak zbiór Iris dostępny w bibliotece scikit-learn i zbiór Mushroom dostępny na platformie Kaggle.
+Projekt testowano na rzeczywistych zbiorach danych, takich jak zbiór Iris dostępny w bibliotece scikit-learn i zbiór Mushroom dostępny na platformie Kaggle (katalog /data).
 
 ---
 
@@ -22,15 +22,16 @@ Projekt testowano na rzeczywistych zbiorach danych, takich jak zbiór Iris dost�
 ---
 
 ## Struktura projektu
-1. **Implementacja klasyfikatorów:**
+1. **Implementacja klasyfikatorów: /src**
    - `MultinomialNaiveBayesClassifier` – dla danych kategorycznych.
    - `GaussianNaiveBayesClassifier` – dla danych ilościowych.
+   - `NaiveBayesClassifier` – abstrakcyjna klasa nadrzędna dla naiwnego klasyfikatora bayesowskiego.
 
-2. **Wstępna analiza danych:**
+2. **Wstępna analiza danych: /data_analysis**
    - Wizualizacja danych.
    - Wybór cech, które najlepiej odróżniają klasy w zbiorze danych.
 
-3. **Ewaluacja:**
+3. **Ewaluacja: /accuracy_notebooks**
    - Podział danych na zbiory treningowe i testowe.
    - Obliczanie dokładności poszczególnych klasyfikatorów w notebookach `Mushrooms_accuracy.ipynb` i `Iris_Accuracy.ipynb`.
 
