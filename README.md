@@ -49,3 +49,5 @@ Projekt testowano na rzeczywistych zbiorach danych, takich jak zbiór Iris dost�
 ## Autorzy
 - **Maciej Kmąk**
 - **Jakub Gucwa**
+
+Projekt został napisany jako projekt z przedmiotu **Rachunek prawdopodobieństwa i statystyka** na II roku studiów **Informatyka** na Wydziale Informatyki AGH.
