@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod 
 class NaiveBayesClassifier(ABC):
     """
-    Klasa nadrzędna dla klasyfikatorów Naiwnego Bayesa.
+    Klasa nadrzędna dla Naiwnych Klasyfikatorów Bayesowskich.
     
     Atrybuty:
         classes (list): Lista dostępnych klas w danych.
@@ -23,6 +23,7 @@ class NaiveBayesClassifier(ABC):
     @abstractmethod
     def fit(self, data):
         """
+        Metoda Abstrakcyjna
         Trenuje model na podanych danych.
         
         Args:
@@ -33,6 +34,7 @@ class NaiveBayesClassifier(ABC):
     @abstractmethod
     def predict_proba(self, record):
         """
+        Metoda Abstrakcyjna
         Oblicza prawdopodobieństwa przynależności rekordu do każdej klasy.
         
         Args:
