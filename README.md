@@ -50,4 +50,4 @@ Projekt testowano na rzeczywistych zbiorach danych, takich jak zbiór Iris dost�
 - **Maciej Kmąk**
 - **Jakub Gucwa**
 
-Projekt został napisany jako projekt z przedmiotu **Rachunek prawdopodobieństwa i statystyka** na II roku studiów **Informatyka** na Wydziale Informatyki AGH.
+Projekt został zrealizowany w ramach przedmiotu **Rachunek prawdopodobieństwa i statystyka**, prowadzonego na II roku studiów na kierunku **Informatyka** na **Wydziale Informatyki Akademii Górniczo-Hutniczej**.
