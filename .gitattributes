@@ -1,4 +1,4 @@
 * linguist-language=Python
 
-accuracy_notebooks/* linguist-language=
-data_analysis/* linguist-language=
+accuracy_notebooks/* linguist-generated linguist-vendored linguist-language= 
+data_analysis/* linguist-generated linguist-vendored linguist-language= 
